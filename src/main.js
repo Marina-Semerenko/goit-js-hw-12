@@ -12,7 +12,7 @@ import {
   hideLoadMoreButton,
 } from "./js/render-functions.js";
 
-const form = document.querySelector(".form");
+const searchForm = document.querySelector(".form");
 const loadMoreBtn = document.querySelector(".load-more");
 
 let currentQuery = "";
@@ -22,17 +22,17 @@ let totalHits = 0;
 
 
 
-form.addEventListener("submit", async (event) => {
+searchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const query = event.currentTarget.elements["search-text"].value.trim();
+  const querySearch = event.currentTarget.elements["search-text"].value.trim();
 
-  if (!query) 
+  if (!querySearch) 
    
     return;
   
 
-  currentQuery = query;
+  currentQuery = querySearch;
   currentPage = 1;
   totalHits = 0;
 
